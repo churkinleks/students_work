@@ -7,7 +7,7 @@ from vacancies.models import Specialty, Company, Vacancy
 
 def main_view(request):
     # TODO Хорошая работа!
-    # TODO Попробуйте только убрать all(), так как вроде и без этого должно работать
+    # TODO Попробуйте только убрать all(), так как и без этого должно работать
     specialties = Specialty.objects.annotate(num_vacancy=Count('vacancies')).all()
     companies = Company.objects.annotate(num_vacancy=Count('vacancies')).all()
 
